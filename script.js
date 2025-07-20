@@ -24,7 +24,14 @@ if (!("webkitSpeechRecognition" in window)) {
     startBtn.disabled = false;
     stopBtn.disabled = true;
   };
+ recognition.onresult = (event) => {
+    let transcript = "";
+    for (let i = event.resultIndex; i < event.results.length; ++i) {
+        
+    }
  }
+}
+
 
 
 
