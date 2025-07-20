@@ -19,6 +19,11 @@ if (!("webkitSpeechRecognition" in window)) {
     startBtn.disabled = true;
     stopBtn.disabled = false;
  };
+ stopBtn.onclick = () => {
+    recognition.stop();
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+  };
  }
 
 
