@@ -7,3 +7,8 @@ let languageSelect = document.getElementById("language");
 
 if (!("webkitSpeechRecognition" in window)) {
   alert("Speech recognition not supported in this browser. Try Chrome.");
+} else {
+    recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+}
