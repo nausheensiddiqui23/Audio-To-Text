@@ -16,7 +16,9 @@ if (!("webkitSpeechRecognition" in window)) {
  startBtn.onClick = () => {
     recognition.lang = languageSelect.value;
     recognition.start();
-
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
+ };
  }
 
 
