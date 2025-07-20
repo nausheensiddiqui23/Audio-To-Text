@@ -11,8 +11,11 @@ if (!("webkitSpeechRecognition" in window)) {
     recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
   recognition.interimResults = true;
+
+
  startBtn.onClick = () => {
-    
+    recognition.lang = languageSelect.value;
+
  }
 
 
