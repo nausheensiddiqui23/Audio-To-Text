@@ -17,7 +17,7 @@ click_to_convert.addEventListener('click', function () {
     for (let i = e.resultIndex; i < e.results.length; i++) {
       transcript += e.results[i][0].transcript;
     }
-    convert_text.innerText = transcript;
+    convert_text.value = transcript;
   });
 
   recognition.onerror = function (event) {
