@@ -35,6 +35,7 @@ button {
 button:hover {
   background-color: #357ab8;
   transform: scale(1.1);
+  <i class="fa-solid fa-microphone-lines fa-beat-fade fa-xl"></i>
 }
 
 
