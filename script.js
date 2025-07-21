@@ -1,42 +1,28 @@
-const startBtn = document.getElementById("click_to_convert");
-const convert_text = document.getElementById("convert_text");
-const languageSelect = document.getElementById("language");
+const btn = document.getElementById("click_to_convert");
+const output = document.getElementById("convert_text");
 
-let recognition;
-
+// Check for browser support
 if (!('webkitSpeechRecognition' in window)) {
-  alert("Speech recognition not supported. Use Chrome.");
+  alert("Speech Recognition only works in Google Chrome.");
 } else {
-  recognition = new webkitSpeechRecognition();
-  recognition.continuous = true;
+  const recognition = new webkitSpeechRecognition();
+  recognition.continuous = false;
   recognition.interimResults = true;
+  recognition.lang = 'en-US';
 
-  recognition.onresult = (e) => {
-    let transcript = '';
-    for (let i = e.resultIndex; i < e.results.length; ++i) {
-      transcript += e.results[i][0].transcript;
-    }
-    convert_text.value = transcript;
+  btn.addEventListener("click", () => {
+    output.value = ""; // clear previous text
+    recognition.start();
+  });
+
+  recognition.onresult = (event) => {
+    const transcript = Array.from(event.results)
+      .map(result => result[0].transcript)
+      .join('');
+    output.value = transcript;
   };
 
   recognition.onerror = (event) => {
     console.error("Speech recognition error:", event.error);
-    stopGlow();
   };
-
-  recognition.onend = () => {
-    stopGlow();
-    startBtn.disabled = false;
-  };
-
-  startBtn.addEventListener("click", () => {
-    recognition.lang = languageSelect.value;
-    recognition.start();
-    startBtn.classList.add("glow");
-    startBtn.disabled = true;
-  });
-
-  function stopGlow() {
-    startBtn.classList.remove("glow");
-  }
 }

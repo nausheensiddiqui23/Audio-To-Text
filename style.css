@@ -1,78 +1,49 @@
-body{
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
   margin: 0;
-  font-family: 'Segeo UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 20px;
+  padding: 20px;
+  text-align: center;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  font-family: 'Georgia', serif;
+  color: #333;
+  margin-bottom: 30px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
 
 button {
   width: 70px;
   height: 70px;
-  border-radius: 50%; /* Makes it a perfect circle */
-  font-size: 24px;
+  border-radius: 50%;
   background-color: #4a90e2;
   color: white;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #357ab8;
-  transform: scale(1.1);
-  <i class="fa-solid fa-microphone-lines fa-beat-fade fa-xl"></i>
+button:hover i {
+  animation: fa-beat-fade 1.5s infinite;
 }
 
-
-
-textarea{
-  margin-top: 20px;
-  padding: 15px;
+textarea {
   width: 80%;
   max-width: 500px;
-  height: 200px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
   font-size: 16px;
-  line-height: 1.5;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  resize: vertical;
-  background-color: #fff;
-  box-shadow: 0 0 8px rgba(0,0, 0, 0.05);
-}
-
-@media (max-width: 600px){
-  textarea {
-    width: 100%;
-  }
-}
-.glow {
-  animation: glowPulse 1s infinite;
-  box-shadow: 0 0 8px 2px rgba(74, 144, 226, 0.6);
-}
-
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(74, 144, 226, 1);
-  }
-  100% {
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.6);
-  }
+  resize: none;
 }
