@@ -17,21 +17,27 @@ h1 {
 }
 
 
-button{
-  padding: 10px 20px;
+button {
+  padding: 12px 25px;
   margin: 5px;
   font-size: 16px;
   background-color: #4a90e2;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 999px; /* Makes it fully rounded */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s ease;
+  width: 60px;
+height: 60px;
+border-radius: 50%;
+
 }
 
-button:hover{
+button:hover {
   background-color: #357ab8;
+  transform: scale(1.05);
 }
+
 
 textarea{
   margin-top: 20px;
