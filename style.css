@@ -44,3 +44,9 @@ textarea{
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0,0, 0, 0.05);
 }
+
+@media (max-width: 600px){
+  textarea {
+    width: 100%;
+  }
+}
