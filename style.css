@@ -8,11 +8,14 @@ body{
   padding: 50px 20px;
 }
 
-h1{
-  font-size: 2em;
-  color: #222;
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  color: #2c3e50;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
+
 
 button{
   padding: 10px 20px;
