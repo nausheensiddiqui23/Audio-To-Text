@@ -1,39 +1,28 @@
-let recognition;
-let output = document.getElementById("output");
-let startBtn = document.getElementById("startBtn");
-let stopBtn = document.getElementById("stopBtn");
-let languageSelect = document.getElementById("language");
+const click_to_convert = document.getElementById('click_to_convert');
+const convert_text = document.getElementById('convert_text');
 
+click_to_convert.addEventListener('click', function () {
+  if (!('webkitSpeechRecognition' in window)) {
+    alert('Your browser does not support Speech Recognition. Try Chrome.');
+    return;
+  }
 
-if (!("webkitSpeechRecognition" in window)) {
-  alert("Speech recognition not supported in this browser. Try Chrome.");
-} else {
-    recognition = new webkitSpeechRecognition();
-  recognition.continuous = true;
+  const recognition = new webkitSpeechRecognition();
   recognition.interimResults = true;
+  recognition.continuous = true;
+  recognition.lang = 'en-US'; // You can make this dynamic
 
-
- startBtn.onClick = () => {
-    recognition.lang = languageSelect.value;
-    recognition.start();
-    startBtn.disabled = true;
-    stopBtn.disabled = false;
- };
- stopBtn.onclick = () => {
-    recognition.stop();
-    startBtn.disabled = false;
-    stopBtn.disabled = true;
-  };
- recognition.onresult = (event) => {
-    let transcript = "";
-    for (let i = event.resultIndex; i < event.results.length; ++i) {
-        transcript += event.results[i][0].transcript;
-
+  recognition.addEventListener('result', (e) => {
+    let transcript = '';
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      transcript += e.results[i][0].transcript;
     }
-    output.textContent = transcript;
- };
+    convert_text.innerText = transcript;
+  });
 
-recognition.onerror = (event) => {
-console.error("Speech recognition error", event.error);
-};
-}
+  recognition.onerror = function (event) {
+    console.error('Error:', event.error);
+  };
+
+  recognition.start();
+});

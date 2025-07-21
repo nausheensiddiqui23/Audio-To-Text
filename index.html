@@ -1,35 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio To Text</title>
-     <link rel="stylesheet" href="style.css"/>
+  <title>Audio to Text</title>
+
 </head>
+<link rel="stylesheet" href="style.css">
+
 <body>
-    <div class="container">
-        <h1>Audio to Text</h1>
-      <select id="language">
-        <option value="en-US">English (US)</option>
-        <option value="en-IN">Hindi (India)</option>
-        <option value="en-CA">English (Canada)</option>
-        <option value="en-AU">English (Australia)</option>
-        <option value="en-GB">English (UK)</option>
-        <option value="es-ES">Spanish (Spain)</option>
-        <option value="fr-FR">French (France)</option>
-        <option value="de-DE">German (Germany)</option>
-        <option value="zh-CN">Chinese (China)</option>
-        <option value="ja-JP">Japanese (Japan)</option>
-        <option value="ko-KR">Korean (South Korea)</option>
-        <option value="ar-SA">Arabic (Saudi Arabia)</option>
-      </select>
-    <button id="startBtn">Start Listening</button>
-    <button id="stopBtn" disabled>Stop</button>
+  <h1>Speech to Text Converter</h1>
+  <button id="click_to_convert">Start Listening</button>
+  <textarea id="convert_text" rows="10" cols="60" placeholder="Transcribed text will appear here..."></textarea>
 
-    <div class="output" id="output"></div>
-
-
-    </div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
