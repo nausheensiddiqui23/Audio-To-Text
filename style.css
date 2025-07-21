@@ -18,25 +18,25 @@ h1 {
 
 
 button {
-  padding: 12px 25px;
-  margin: 5px;
-  font-size: 16px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; /* Makes it a perfect circle */
+  font-size: 24px;
   background-color: #4a90e2;
   color: white;
   border: none;
-  border-radius: 999px; /* Makes it fully rounded */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s ease;
-  width: 60px;
-height: 60px;
-border-radius: 50%;
-
 }
 
 button:hover {
   background-color: #357ab8;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
+
 
 
 textarea{
@@ -57,5 +57,21 @@ textarea{
 @media (max-width: 600px){
   textarea {
     width: 100%;
+  }
+}
+.glow {
+  animation: glowPulse 1s infinite;
+  box-shadow: 0 0 8px 2px rgba(74, 144, 226, 0.6);
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(74, 144, 226, 1);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.6);
   }
 }
