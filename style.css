@@ -15,23 +15,7 @@ body {
     background-size: 105%;
   }
 }
- /* body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  z-index: -1;
-  opacity: 0.4;
-}
-
-@keyframes gradientShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}  */
+ 
 
 
 h1 {
@@ -69,7 +53,7 @@ button:hover i {
 textarea {
   width: 80%;
   max-width: 500px;
-  height: 150px;
+  height: 200px;
   padding: 10px;
   border-radius: 10px;
   border: none;
